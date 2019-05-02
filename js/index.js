@@ -41,16 +41,29 @@ const siteContent = {
 
 
 //nav
-let nav = document.querySelectorAll('nav a')
+let navA = document.querySelectorAll('nav a')
+let nav = document.querySelector('nav ')
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-nav[0].textContent = siteContent['nav']['nav-item-1'];
-nav[1].textContent = siteContent['nav']['nav-item-2'];
-nav[2].textContent = siteContent['nav']['nav-item-3'];
-nav[3].textContent = siteContent['nav']['nav-item-4'];
-nav[4].textContent = siteContent['nav']['nav-item-5'];
-nav[5].textContent = siteContent['nav']['nav-item-6'];
+let child = document.createElement('a')
+let help = document.createElement('a')
+child.textContent='Hiring'
+child.style.color ='green'
+help.textContent='Help'
+help.style.color='green'
+nav.appendChild(help)
+nav.prepend(child)
+console.log(child)
+
+navA[0].textContent = siteContent['nav']['nav-item-1'];
+navA[1].textContent = siteContent['nav']['nav-item-2'];
+navA[2].textContent = siteContent['nav']['nav-item-3'];
+navA[3].textContent = siteContent['nav']['nav-item-4'];
+navA[4].textContent = siteContent['nav']['nav-item-5'];
+navA[5].textContent = siteContent['nav']['nav-item-6'];
+
+navA.forEach(colors => colors.style.color='green')
 
 //cta
 let banner = document.getElementById('cta-img');
